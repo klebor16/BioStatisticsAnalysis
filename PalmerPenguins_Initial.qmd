@@ -9,6 +9,8 @@ execute:
 
 # *Palmer Penguins*
 
+This is an analysis of the Palmer Penguin dataset
+
 ```{r}
 library(tidyverse)
 
@@ -17,6 +19,5 @@ penguins <- read_csv("https://raw.githubusercontent.com/mcduryea/Intro-to-Bioinf
 
 #See the first six rows of the data we've read in to our notebook
 penguins %>% head()
-
-penguins 
+ 
 ```

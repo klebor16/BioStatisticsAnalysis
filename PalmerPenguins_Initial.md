@@ -11,6 +11,8 @@ execute:
 
 # *Palmer Penguins*
 
+This is an analysis of the Palmer Penguin dataset
+
 
 ::: {.cell}
 
@@ -66,30 +68,6 @@ penguins %>% head()
 5 Gentoo  Biscoe           55.1          16              230    5850 male   2009
 6 Gentoo  Biscoe           49.8          15.9            229    5950 male   2009
 # … with abbreviated variable names ¹​flipper_length_mm, ²​body_mass_g
-```
-:::
-
-```{.r .cell-code}
-penguins 
-```
-
-::: {.cell-output .cell-output-stdout}
-```
-# A tibble: 44 × 8
-   species island bill_length_mm bill_depth_mm flipper_len…¹ body_…² sex    year
-   <chr>   <chr>           <dbl>         <dbl>         <dbl>   <dbl> <chr> <dbl>
- 1 Gentoo  Biscoe           59.6          17             230    6050 male   2007
- 2 Gentoo  Biscoe           48.6          16             230    5800 male   2008
- 3 Gentoo  Biscoe           52.1          17             230    5550 male   2009
- 4 Gentoo  Biscoe           51.5          16.3           230    5500 male   2009
- 5 Gentoo  Biscoe           55.1          16             230    5850 male   2009
- 6 Gentoo  Biscoe           49.8          15.9           229    5950 male   2009
- 7 Gentoo  Biscoe           49.6          16             225    5700 male   2008
- 8 Gentoo  Biscoe           50            15.9           224    5350 male   2009
- 9 Gentoo  Biscoe           50.5          15.9           222    5550 male   2008
-10 Gentoo  Biscoe           49.2          15.2           221    6300 male   2007
-# … with 34 more rows, and abbreviated variable names ¹​flipper_length_mm,
-#   ²​body_mass_g
 ```
 :::
 :::
