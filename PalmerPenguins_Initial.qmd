@@ -49,3 +49,54 @@ penguins %>%
   
 
 ```
+
+```{r}
+penguins %>%
+  count(species)
+
+```
+
+```{r}
+penguins %>% count(island, species)
+
+```
+
+```{r}
+penguins %>%
+  count(island, species) %>%
+  pivot_wider(names_from = species, values_from = n, values_fill = 0)
+```
+
+```{r}
+penguins %>%
+  count(island, species) %>%
+  pivot_wider(names_from = species, values_from = n, values_fill = 0) %>%
+  kable() %>%
+  kable_styling(bootstrap_options = c("hover", "striped"))
+```
+
+```{r}
+penguins %>%
+  summarize(mean_bill_length_mm = mean(bill_length_mm))
+
+```
+
+Oops -- there were missing values in there! This is a good opportunity to explain that *missing data is contagious* -- that means that if we try to compute a quantity, and some of the values are missing (`NA`), then the result will be `NA`. Let\'s try this again, but explicitly tell R that we want to ignore the `NA` values.
+
+```{r}
+penguins %>%
+  summarize(mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE))
+```
+
+```{r}
+penguins %>%
+  summarize(
+    min_bill_length = min(bill_length_mm, na.rm = TRUE),
+    first_quartile_bill_length = quantile(bill_length_mm, 0.25, na.rm = TRUE),
+    median_bill_length = median(bill_length_mm, na.rm = TRUE),
+    mean_bill_length_mm = mean(bill_length_mm, na.rm = TRUE),
+    third_quartile_bill_length = quantile(bill_length_mm, 0.75, na.rm = TRUE),
+    standard_deviation_bill_length = sd(bill_length_mm, na.rm = TRUE)
+    ) %>%
+  pivot_longer(cols = everything())
+```
